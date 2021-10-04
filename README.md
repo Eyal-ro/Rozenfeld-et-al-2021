@@ -14,6 +14,8 @@ The code was tested on a Windows 10 PC and does not require any specialized hard
 
 * This package was generated using MATLAB R2018a on a Windows 10 machine. 
 * Some scripts require the shadedErrorBar and UnivarScatter toolboxes (present in the Code folder). 
+    * https://github.com/manulera/UnivarScatter
+    * Rob Campbell (2021). raacampbell/shadedErrorBar (https://github.com/raacampbell/shadedErrorBar), GitHub.
 
 ## Version History
 
