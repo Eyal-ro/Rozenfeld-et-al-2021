@@ -74,7 +74,15 @@ e1=errorbar([1 2 3 4],[mean(wt_minus_80_high_concentration_abs_value) mean(KK_mi
     [std(wt_minus_80_high_concentration_abs_value')/sqrt(size(wt_minus_80_high_concentration_abs_value,1)) std(KK_minus_80_high_concentration_abs_value')/sqrt(size(KK_minus_80_high_concentration_abs_value,1)) std(wt_plus_40_high_concentration_abs_value')/sqrt(size(wt_plus_40_high_concentration_abs_value,1)) std(KK_plus_40_high_concentration_abs_value')/sqrt(size(KK_plus_40_high_concentration_abs_value,1)) ]);
 e1.LineStyle='none';
 e1.Color = 'k';
-
+max_size=max([length(wt_minus_80_high_concentration_abs_value),length(KK_minus_80_high_concentration_abs_value),length(wt_plus_40_high_concentration_abs_value),length(KK_plus_40_high_concentration_abs_value)]);
+wt_minus_80_high_concentration_abs_value(end:max_size+1)=nan;
+KK_minus_80_high_concentration_abs_value(end:max_size+1)=nan;
+wt_plus_40_high_concentration_abs_value(end:max_size+1)=nan;
+KK_plus_40_high_concentration_abs_value(end:max_size+1)=nan;
+hold on;
+UnivarScatter([wt_minus_80_high_concentration_abs_value,KK_minus_80_high_concentration_abs_value,...
+    wt_plus_40_high_concentration_abs_value,KK_plus_40_high_concentration_abs_value]...
+    ,'Width',0.2,'Compression',15,'Label',{'wt','KK','wt','KK'},'Whiskers','none');
 xticks([1 2 3 4])
 xticklabels({'wt','KK','wt','KK'})
 box off;ylabel('microA(abs)');
